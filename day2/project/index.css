@@ -1,0 +1,48 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    align-items: center;
+};
+
+.logo{
+    color: black;
+    grid-column: 1/2;
+}
+
+.menu{
+    grid-column: 3/4;
+}
+
+.main{
+    padding: 10px;
+    width: 100%;
+    height: 250px;
+    background-color: #F7B538;
+    display: grid;
+    align-items: center;
+}
+
+.intro_text p{
+    color: white;
+}
+
+.intro_text h1{
+    color: white;
+}
+
+.intro_text button{
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    border: solid 1px white;
+}
