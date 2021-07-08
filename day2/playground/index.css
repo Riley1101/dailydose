@@ -1,0 +1,16 @@
+/* #first{
+    width: 400px;
+    height: 400px;
+} */
+.one{
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 20px;
+    padding: 5px;
+    border: solid 10px black ;
+
+    width: 250px;
+    height: 400px;
+}
+
