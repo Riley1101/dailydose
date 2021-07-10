@@ -2,4 +2,5 @@ body{
     display: grid;
     place-items: center;
     height: 100vh;
+    background-color: hsl(120,70%,10%);
 }
