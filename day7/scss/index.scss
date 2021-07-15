@@ -1,0 +1,12 @@
+@use './colors' as *;
+@use './img' as *;
+body{
+    color: $primary;
+    background-color: $secondary;
+}
+
+
+
+div{
+    @extend .img;
+}

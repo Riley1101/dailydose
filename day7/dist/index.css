@@ -1,0 +1,12 @@
+.img, div {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: red;
+  background-color: blue;
+}
+
+/*# sourceMappingURL=index.css.map */
