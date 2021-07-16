@@ -1,0 +1,165 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+$primary:#21A6DF;
+$accent:#FF7F50;
+$text:#3b3b3b;
+$light:#fff;
+$spacing:1em;
+$spacing_large:3em;
+
+$color:(
+    primary:#21A6DF,
+    accent:#FF7F50,
+    text:#817B7B,
+    light:#fff,
+);
+
+$fonts:(
+    logo:1.2em,
+    h1:2em,
+    p:1em,
+    h2:1.3em,
+    
+);
+@function color($value){
+    @return map-get($map:$color , $key: $value)
+};
+
+@function font($value){
+    @return map-get($map:$fonts , $key: $value)
+};
+
+@mixin mq($breakpoint) {
+    @media (min-width:$breakpoint) {
+        @content;
+    }
+};
+.underline{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: color(accent);
+    left: 0;
+    bottom: -10px;
+    transition: all 250ms ease;
+    &:hover{
+        width: 100%;
+    }
+};
+body{
+    font-family: sans-serif;
+    background-color: color(primary);    
+    margin: 0;
+    padding: $spacing;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60px auto;
+
+    row-gap: $spacing_large;
+    line-height: 1.5;
+
+    @include mq(900px){
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+header{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: font(logo);
+      
+    }
+    ul{
+        display: flex;
+        padding: 0;
+        list-style: none;
+        li{
+            font-size: font(p);
+            color: color(light);
+            position: relative;
+            &::after{
+              @extend .underline;
+            };
+        }
+
+    }
+}
+
+.intro{
+    h1{
+        font-size: font(h1);
+        color: color(light);
+        font-weight: normal;
+    }
+
+    p{
+        color: color(light);
+    }
+
+    a{
+        text-decoration: none;
+        color: color(light);
+        position: relative;
+        &::after{
+           @extend .underline;
+        };
+    }
+
+    @include mq(900px){
+        padding-top: 10em;
+    }
+}
+main{
+    display: grid;
+    gap: $spacing_large;
+
+    @include mq(900px){
+        // background-color: red;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+.cards{
+    display: grid;
+    gap: $spacing;
+    @include mq(900px){
+        // background-color: red;
+        padding-top: 15em;
+    }}
+.card{
+    background-color: color(light);
+    padding: $spacing;
+
+    h3{
+        font-weight: normal;
+        margin: $spacing 0;
+        font-size: font(h2);
+    }
+    p{
+        color: color(text);
+        font-size: 1em;
+    }
+
+    a{
+        text-decoration: none;
+        color: color(accent);
+        text-transform: uppercase;
+        position: relative;
+    }
+}
+
+@media screen {
+    
+}
